@@ -9,6 +9,21 @@
 defined('_JEXEC') or die('Restricted access');
 ?>
 <?php print $product->_tmp_var_start?>
+
+<div class="product productitem_<?php print $product->product_id?>">
+    <a href="<?php print $product->product_link?>">
+                <img class="jshop_img" src="<?php print str_replace(array("/thumb_"), "/", $product->image)?>" alt="<?php print htmlspecialchars($product->name);?>" title="<?php print htmlspecialchars($product->name);?>" />
+    </a>
+    <div class="product_name">
+        <?php print htmlspecialchars($product->name);?>
+    </div>
+    <div class="product_price">
+        <?php print formatprice($product->product_price);?>
+        <a class="button_buy" href="<?php print $product->buy_link?>"><?php print _JSHOP_BUY?></a>
+    </div>
+
+</div>
+<!--
 <table class="product productitem_<?php print $product->product_id?>">
 <tr>
     <td class="image">
@@ -107,4 +122,6 @@ defined('_JEXEC') or die('Restricted access');
     </td>
 </tr>
 </table>
+-->
+
 <?php print $product->_tmp_var_end?>
